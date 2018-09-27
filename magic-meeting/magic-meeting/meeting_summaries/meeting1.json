@@ -1,0 +1,10 @@
+{
+    "meeting_name": "meeting1",
+    "meeting_start_time": "27/02/2018 13:00:00",
+    "notes": [
+        {"type": "action_item", "time": "27/02/2018 13:15:02", "name": "1", "assignee": "Dorothy", "description": "prepare a lecture for next week"},
+        {"type": "note", "time": "27/02/2018 13:26:40"},
+        {"type": "check", "time": "27/02/2018 13:33:52", "start_time_delta": "-60", "description": "make sure the numbers in the report are correct"}
+    ]
+}
+

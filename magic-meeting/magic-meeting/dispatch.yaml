@@ -1,0 +1,10 @@
+# gcloud app deploy dispatch.yaml --project magic-meeting --quiet
+
+dispatch:
+  # Default module serves the typical web resources and all static resources.
+
+  - url: "*/magic/*"
+    service: default
+
+  - url: "*/*"
+    service: ui

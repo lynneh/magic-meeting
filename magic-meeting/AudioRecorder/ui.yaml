@@ -1,0 +1,67 @@
+# gcloud app deploy ui.yaml --project magic-meeting --version 1-0-2 --quiet
+
+service: ui
+runtime: python27
+threadsafe: true
+api_version: 1
+default_expiration: "10m"
+
+handlers:
+- url: /js
+  static_dir: js
+  mime_type: text/javascript; charset=utf-8
+  secure: always
+
+- url: /img
+  static_dir: img
+  secure: always
+
+- url: /summary.html
+  upload: summary\.html
+  static_files: summary.html
+  secure: always
+
+- url: (.*)/
+  upload: index\.html
+  static_files: index.html
+  secure: always
+
+#- url: /favicon\.ico
+#  static_files: favicon.ico
+#  upload: favicon\.ico
+#  login: admin
+#  secure: always
+#
+#- url: (.*)/
+#  static_files: UI/angular-seed/app\1/index.html
+#  upload: UI/angular-seed/app/index\.html
+#  mime_type: text/html; charset=utf-8
+#  login: admin
+#  secure: always
+#
+#- url: (/.*\.css)
+#  static_files: UI/angular-seed/app\1
+#  upload: UI/angular-seed/app/.*\.css
+#  mime_type: text/css; charset=utf-8
+#  login: admin
+#  secure: always
+#
+#- url: (/.*\.html)
+#  static_files: UI/angular-seed/app\1
+#  upload: UI/angular-seed/app/.*\.html
+#  mime_type: text/html; charset=utf-8
+#  login: admin
+#  secure: always
+#
+#- url: (/.*\.js)
+#  static_files: UI/angular-seed/app\1
+#  upload: UI/angular-seed/app/.*\.js
+#  mime_type: text/javascript; charset=utf-8
+#  login: admin
+#  secure: always
+#
+#- url: /img
+  #  static_dir: UI/angular-seed/app/img
+#  login: admin
+#  secure: always
+
